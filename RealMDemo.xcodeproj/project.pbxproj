@@ -10,6 +10,7 @@
 		E88895D167E59CD01B74A142 /* libPods-RealMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1564FAB129D81C84043A7D61 /* libPods-RealMDemo.a */; };
 		F40764972022D268004F1779 /* RLMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40764962022D267004F1779 /* RLMBaseModel.m */; };
 		F407649A2022F6B3004F1779 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40764992022F6B3004F1779 /* UserInfoModel.m */; };
+		F407649D202AF2E5004F1779 /* DataInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F407649C202AF2E5004F1779 /* DataInfoManager.m */; };
 		F414BAFD1FE918C10034F8CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F414BAFC1FE918C10034F8CD /* AppDelegate.m */; };
 		F414BB001FE918C10034F8CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F414BAFF1FE918C10034F8CD /* ViewController.m */; };
 		F414BB031FE918C10034F8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F414BB011FE918C10034F8CD /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		F40764962022D267004F1779 /* RLMBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLMBaseModel.m; sourceTree = "<group>"; };
 		F40764982022F6B3004F1779 /* UserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
 		F40764992022F6B3004F1779 /* UserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		F407649B202AF2E5004F1779 /* DataInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataInfoManager.h; sourceTree = "<group>"; };
+		F407649C202AF2E5004F1779 /* DataInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataInfoManager.m; sourceTree = "<group>"; };
 		F414BAF81FE918C10034F8CD /* RealMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F414BAFB1FE918C10034F8CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F414BAFC1FE918C10034F8CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				F47DB658201B1A0D00743055 /* DataBaseManager.m */,
 				F40764952022D267004F1779 /* RLMBaseModel.h */,
 				F40764962022D267004F1779 /* RLMBaseModel.m */,
+				F407649B202AF2E5004F1779 /* DataInfoManager.h */,
+				F407649C202AF2E5004F1779 /* DataInfoManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				F40764972022D268004F1779 /* RLMBaseModel.m in Sources */,
 				F414BB001FE918C10034F8CD /* ViewController.m in Sources */,
 				F407649A2022F6B3004F1779 /* UserInfoModel.m in Sources */,
+				F407649D202AF2E5004F1779 /* DataInfoManager.m in Sources */,
 				F414BB0B1FE918C10034F8CD /* main.m in Sources */,
 				F414BAFD1FE918C10034F8CD /* AppDelegate.m in Sources */,
 				F47DB65F201B1A0E00743055 /* DataBaseManager.m in Sources */,

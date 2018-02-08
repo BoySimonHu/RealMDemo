@@ -49,12 +49,25 @@
 }
 
 #pragma mark - 成员方法
-- (void)getData {
-    RLMRealm *realm = [RLMRealm defaultRealm];
+#pragma mark - select method
++ (RLMResults<RLMObject *> *)selectAllObjectByIdName:(NSString *)idName idValue:(id)idValue {
     
-    [realm transactionWithBlock:^{
-       
-    }];
+    NSString *where = @"";
+    if ([idValue isKindOfClass:[NSString class]]) {
+        where = [NSString stringWithFormat:@"%@ == '%@'", idName, idValue];
+    }
+    
+    return [[self class] objectsWhere:where];
+}
+
++ (RLMObject *)selectOneObjectByIdName:(NSString *)idName idValue:(id)idValue {
+    
+    NSString *where = @"";
+    if ([idValue isKindOfClass:[NSString class]]) {
+        where = [NSString stringWithFormat:@"%@ == '%@'", idName, idValue];
+    }
+    
+    return [[self class] objectsWhere:where].firstObject;
 }
 
 - (void)saveData {
@@ -67,9 +80,11 @@
 
 #pragma mark - 类方法
 + (RLMBaseModel *)saveDataWithJson:(NSDictionary *)jsonDic {
-    id model = [[[self class] alloc] initWithValue:jsonDic];
+    RLMRealm *realm = [RLMRealm defaultRealm];
     
-    [model saveData];
+    [realm beginWriteTransaction];
+    id model = [[self class] createOrUpdateInDefaultRealmWithValue:jsonDic];
+    [realm commitWriteTransaction];
     
     return model;
 }

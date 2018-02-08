@@ -8,17 +8,35 @@
 
 #import "UserInfoModel.h"
 
+#import "DataInfoManager.h"
+
 @implementation UserInfoModel
 
-- (instancetype)initWithID:(NSString *)userID {
++(NSArray<NSString *> *)ignoredProperties {
+    return @[@"updateName"];
+}
+
++ (NSString *)primaryKey {
+    return @"_id";
+}
+
+- (instancetype)initWithUserId:(NSString *)userID {
     self = [super init];
     if (!self) {
         return nil;
     }
     
-    self = [[UserInfoModel objectsWhere:@"_id == '5a7291277a8d3c5130ca1a4b'"] firstObject];
-    
-    return self;
+    return (UserInfoModel *)[UserInfoModel selectOneObjectByIdName:@"_id" idValue:userID];
+}
+
+- (void (^)(NSString *))updateName {
+    return ^(NSString *name) {
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        
+        [realm beginWriteTransaction];
+        self.name = name;
+        [realm commitWriteTransaction];
+    };
 }
 
 @end

@@ -8,8 +8,7 @@
 
 #import "ViewController.h"
 
-#import "UserInfoModel.h"
-#import "DataBaseManager.h"
+#import "DataInfoManager.h"
 
 @interface ViewController ()
 
@@ -28,21 +27,12 @@
                          };
     
     // Sync
+    
     [UserInfoModel saveDataWithJson:dic];
     
-    // object operate
-    UserInfoModel *user = [[UserInfoModel alloc] initWithID:@"5a7291277a8d3c5130ca1a4b"];;
+    NSLog(@"--- role:%@ ---", [DataInfoManager manager].user.role);
     
-    NSLog(@"--- role:%@ ---", user.role);
-    
-    [UserInfoModel updateData:^{
-       user.name = @"洋葱";
-    }];
-    
-    //  db.user.name 类似封装manager，不暴露具体model
-    //
-    
-    
+    [DataInfoManager manager].user.updateName(@"洋葱数学");
 }
 
 @end

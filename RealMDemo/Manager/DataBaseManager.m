@@ -26,7 +26,7 @@
       URLByAppendingPathComponent:filePath]
      URLByAppendingPathExtension:@"realm"];
     config.readOnly = NO;
-    
+    config.schemaVersion = 2.0;
     // 配置config
     [RLMRealmConfiguration setDefaultConfiguration:config];
     
@@ -56,29 +56,19 @@
 + (void)updateColumnWithObject:(RLMObject *)object {
     
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-    config.schemaVersion = 5.0;
+    config.schemaVersion = 2.0;
     config.migrationBlock = ^(RLMMigration *migration, uint64_t oldSchemaVersion) {
         RLMObjectSchema * obj = migration.newSchema.objectSchema.firstObject;
         RLMObjectSchema * obj1 = migration.oldSchema.objectSchema.firstObject;
         NSLog(@"%@", obj.properties);
         NSLog(@"%@", obj1.properties);
-        if (oldSchemaVersion < 5.0) {
+        if (oldSchemaVersion < 2.0) {
             
         }
     };
     
     [RLMRealmConfiguration setDefaultConfiguration:config];
     [RLMRealm defaultRealm];
-}
-
-#pragma mark - 字段操作
-+ (void)saveData:(id)property {
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    if ([[property class] isKindOfClass:[NSDictionary class]]) {
-        
-    } else if ([[property class] isKindOfClass:[NSArray class]]) {
-        
-    }
 }
 
 @end

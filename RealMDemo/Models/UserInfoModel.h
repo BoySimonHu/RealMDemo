@@ -15,6 +15,9 @@
 @property NSString *role;
 @property NSString *type;
 
-- (instancetype)initWithID:(NSString *)userID;
+#pragma mark - 字段更新
+@property (nonatomic, copy) void (^updateName)(NSString *name);
+
+- (instancetype)initWithUserId:(NSString *)userID;
 
 @end

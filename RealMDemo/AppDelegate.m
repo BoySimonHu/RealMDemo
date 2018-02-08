@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 创建出数据库
+    
     [DataBaseManager createDataBase];
     
     [DataBaseManager addNewTable:NSStringFromClass(UserInfoModel.class)];

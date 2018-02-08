@@ -23,7 +23,7 @@
 + (void)updateData:(void (^)(void))updateBlock;
 
 /**
- 将jsonDic转化为Model存储到本地
+ 将jsonDic转化为Model存储到本地(更新或插入)
  
  @param jsonDic 得到的jsonDic
  @return RLMBaseModel对象
@@ -37,6 +37,10 @@
  @param value 数据的value
  */
 + (void)updateAllDataWithProperty:(NSString *)property value:(id)value;
+
++ (RLMResults<RLMObject *> *)selectAllObjectByIdName:(NSString *)idName idValue:(id)idValue;
+
++ (RLMObject *)selectOneObjectByIdName:(NSString *)idName idValue:(id)idValue;
 
 
 @end
